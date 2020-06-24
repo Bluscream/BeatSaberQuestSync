@@ -34,7 +34,6 @@ namespace BeatSaberQuestSync
                 if (song.Name == "Jaroslav Beck - Beat Saber (Built in)") continue;
                 var zip = QuestDir.CombineFile(song.Name + ".zip");
                 if (zip.Exists) continue;
-                zip = new DirectoryInfo(Path.GetTempPath()).CombineFile("songs", song.Name + ".zip");
                 Console.WriteLine(zip.PrintablePath());
                 _zip.CreateSample(zip, null, song.FullName);
             }
